@@ -640,3 +640,90 @@ $input-height-lg:                       add($input-line-height * 1em, add($input
 $input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
 $form-color-width:                      3rem;
+# https://github.com/browserslist/browserslist#readme
+
+>= 0.5%
+last 2 major versions
+not dead
+Chrome >= 60
+Firefox >= 60
+Firefox ESR
+iOS >= 12
+Safari >= 12
+not Explorer <= 11>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Hello, modularity!</title>
+  </head>
+  <body>
+    <h1>Hello, modularity!</h1>
+    <button id="popoverButton" type="button" class="btn btn-primary btn-lg" data-bs-toggle="popover" title="ESM in Browser" data-bs-content="Bang!">Custom popover</button>
+
+    <script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js" crossorigin="anonymous"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
+        "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.esm.min.js"
+      }
+    }
+    </script>
+    <script type="module">
+      import * as bootstrap from 'bootstrap'
+
+      new bootstrap.Popover(document.getElementById('popoverButton'))
+    </script>
+  </body>
+</html>
+const myCarouselEl = document.querySelector('#myCarousel')
+const carousel = bootstrap.Carousel.getInstance(myCarouselEl) // Retrieve a Carousel instance
+
+myCarouselEl.addEventListener('slid.bs.carousel', event => {
+  carousel.to('2') // Will slide to the slide 2 as soon as the transition to slide 1 is finished
+})
+
+carousel.to('1') // Will start sliding to the slide 1 and returns to the caller
+carousel.to('2') // !! Will be ignored, as the transition to the slide 1 is not finished !!
+const ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i
+
+export const DefaultAllowlist = {
+  // Global attributes allowed on any supplied element below.
+  '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
+  a: ['target', 'href', 'title', 'rel'],
+  area: [],
+  b: [],
+  br: [],
+  col: [],
+  code: [],
+  dd: [],
+  div: [],
+  dl: [],
+  dt: [],
+  em: [],
+  hr: [],
+  h1: [],
+  h2: [],
+  h3: [],
+  h4: [],
+  h5: [],
+  h6: [],
+  i: [],
+  img: ['src', 'srcset', 'alt', 'title', 'width', 'height'],
+  li: [],
+  ol: [],
+  p: [],
+  pre: [],
+  s: [],
+  small: [],
+  span: [],
+  sub: [],
+  sup: [],
+  strong: [],
+  u: [],
+  ul: []
+}
+
