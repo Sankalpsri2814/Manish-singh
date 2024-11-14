@@ -51,7 +51,6 @@ string rremove(string s) {
     // If no changes made, return the result string
     if (n == sb.length())
         return sb;
-    
     // Otherwise, recursively call the function 
     // to check for more duplicates
     return rremove(sb);
@@ -88,39 +87,28 @@ The NLP algorithms can be used in various languages that are currently unavailab
 Translation of a sentence in one language to the same sentence in another Language at a broader scope.
 Conclusion
 In conclusion, the field of Natural Language Processing (NLP) has significantly transformed the way humans interact with machines, enabling more intuitive and efficient communication. NLP encompasses a wide range of techniques and methodologies to understand, interpret, and generate human language. From basic tasks like tokenization and part-of-speech tagging to advanced applications like sentiment analysis and machine translation, the impact of NLP is evident across various domains. As the technology continues to evolve, driven by advancements in machine learning and artificial intelligence, the potential for NLP to enhance human-computer interaction and solve complex language-related challenges remains immense. Understanding the core concepts and applications of Natural Language Processing is crucial for anyone looking to leverage its capabilities in the modern digital landscape.
-
 Natural Language Processing – FAQs
 What are NLP models?
-
 NLP models are computational systems that can process natural language data, such as text or speech, and perform various tasks, such as translation, summarization, sentiment analysis, etc. NLP models are usually based on machine learning or deep learning techniques that learn from large amounts of language data.
-
 # Python code to demonstrate variance() 
 # function on varying range of data-types
-
 # importing statistics module
 from statistics import variance
-
 # importing fractions as parameter values
 from fractions import Fraction as fr
-
 # tuple of a set of positive integers
 # numbers are spread apart but not very much
 sample1 = (1, 2, 5, 4, 8, 9, 12)
-
 # tuple of a set of negative integers
 sample2 = (-2, -4, -3, -1, -5, -6)
-
 # tuple of a set of positive and negative numbers
 # data-points are spread apart considerably 
 sample3 = (-9, -1, -0, 2, 1, 3, 4, 19)
-
 # tuple of a set of fractional numbers
 sample4 = (fr(1, 2), fr(2, 3), fr(3, 4),
                      fr(5, 6), fr(7, 8))
-
 # tuple of a set of floating point values
 sample5 = (1.23, 1.45, 2.1, 2.2, 1.9)
-
 # Print the variance of each samples
 print("Variance of Sample1 is % s " %(variance(sample1)))
 print("Variance of Sample2 is % s " %(variance(sample2)))
@@ -140,7 +128,6 @@ print("Variance of Sample5 is % s " %(variance(sample5)))
     <li><a class="dropdown-item" href="#">Separated link</a></li>
   </ul>
 </div>
-
 <div class="dropdown" data-bs-theme="dark">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-expanded="false">
     Dark dropdown
@@ -222,7 +209,6 @@ print("Variance of Sample5 is % s " %(variance(sample5)))
 <table class="table-info">...</table>
 <table class="table-light">...</table>
 <table class="table-dark">...</table>
-
 <!-- On rows -->
 <tr class="table-primary">...</tr>
 <tr class="table-secondary">...</tr>
@@ -232,7 +218,6 @@ print("Variance of Sample5 is % s " %(variance(sample5)))
 <tr class="table-info">...</tr>
 <tr class="table-light">...</tr>
 <tr class="table-dark">...</tr>
-
 <!-- On cells (`td` or `th`) -->
 <tr>
   <td class="table-primary">...</td>
@@ -287,7 +272,6 @@ print("Variance of Sample5 is % s " %(variance(sample5)))
     $striped-bg: mix($color, $background, percentage($table-striped-bg-factor));
     $active-bg: mix($color, $background, percentage($table-active-bg-factor));
     $table-border-color: mix($color, $background, percentage($table-border-factor));
-
     --#{$prefix}table-color: #{$color};
     --#{$prefix}table-bg: #{$background};
     --#{$prefix}table-border-color: #{$table-border-color};
@@ -297,7 +281,6 @@ print("Variance of Sample5 is % s " %(variance(sample5)))
     --#{$prefix}table-active-color: #{color-contrast($active-bg)};
     --#{$prefix}table-hover-bg: #{$hover-bg};
     --#{$prefix}table-hover-color: #{color-contrast($hover-bg)};
-
     color: var(--#{$prefix}table-color);
     border-color: var(--#{$prefix}table-border-color);
   }
@@ -406,31 +389,26 @@ print("Variance of Sample5 is % s " %(variance(sample5)))
     ...
   </table>
 </div>
-
 <div class="table-responsive-sm">
   <table class="table">
     ...
   </table>
 </div>
-
 <div class="table-responsive-md">
   <table class="table">
     ...
   </table>
 </div>
-
 <div class="table-responsive-lg">
   <table class="table">
     ...
   </table>
 </div>
-
 <div class="table-responsive-xl">
   <table class="table">
     ...
   </table>
 </div>
-
 <div class="table-responsive-xxl">
   <table class="table">
     ...
@@ -440,38 +418,27 @@ $table-cell-padding-y:        .5rem;
 $table-cell-padding-x:        .5rem;
 $table-cell-padding-y-sm:     .25rem;
 $table-cell-padding-x-sm:     .25rem;
-
 $table-cell-vertical-align:   top;
-
 $table-color:                 var(--#{$prefix}emphasis-color);
 $table-bg:                    var(--#{$prefix}body-bg);
 $table-accent-bg:             transparent;
-
 $table-th-font-weight:        null;
-
 $table-striped-color:         $table-color;
 $table-striped-bg-factor:     .05;
 $table-striped-bg:            rgba(var(--#{$prefix}emphasis-color-rgb), $table-striped-bg-factor);
-
 $table-active-color:          $table-color;
 $table-active-bg-factor:      .1;
 $table-active-bg:             rgba(var(--#{$prefix}emphasis-color-rgb), $table-active-bg-factor);
-
 $table-hover-color:           $table-color;
 $table-hover-bg-factor:       .075;
 $table-hover-bg:              rgba(var(--#{$prefix}emphasis-color-rgb), $table-hover-bg-factor);
-
 $table-border-factor:         .2;
 $table-border-width:          var(--#{$prefix}border-width);
 $table-border-color:          var(--#{$prefix}border-color);
-
 $table-striped-order:         odd;
 $table-striped-columns-order: even;
-
 $table-group-separator-color: currentcolor;
-
 $table-caption-color:         var(--#{$prefix}secondary-color);
-
 $table-bg-scale:              -80%;
 $table-variants: (
   "primary":    shift-color($primary, $table-bg-scale),
@@ -527,7 +494,6 @@ $input-btn-padding-x:         .75rem;
 $input-btn-font-family:       null;
 $input-btn-font-size:         $font-size-base;
 $input-btn-line-height:       $line-height-base;
-
 $input-btn-focus-width:         $focus-ring-width;
 $input-btn-focus-color-opacity: $focus-ring-opacity;
 $input-btn-focus-color:         $focus-ring-color;
@@ -726,4 +692,330 @@ export const DefaultAllowlist = {
   u: [],
   ul: []
 }
+<div class="grid text-center">
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+</div>
+<div class="grid text-center" style="--bs-columns: 3;">
+  <div>
+    First auto-column
+    <div class="grid">
+      <div>Auto-column</div>
+      <div>Auto-column</div>
+    </div>
+  </div>
+  <div>
+    Second auto-column
+    <div class="grid" style="--bs-columns: 12;">
+      <div class="g-col-6">6 of 12</div>
+      <div class="g-col-4">4 of 12</div>
+      <div class="g-col-2">2 of 12</div>
+    </div>
+  </div>
+  <div>Third auto-column</div>
+</div>
+@if $font-size-root != null {
+  --#{$prefix}root-font-size: #{$font-size-root};
+}
+--#{$prefix}body-font-family: #{inspect($font-family-base)};
+@include rfs($font-size-base, --#{$prefix}body-font-size);
+--#{$prefix}body-font-weight: #{$font-weight-base};
+--#{$prefix}body-line-height: #{$line-height-base};
+@if $body-text-align != null {
+  --#{$prefix}body-text-align: #{$body-text-align};
+}
 
+--#{$prefix}body-color: #{$body-color};
+--#{$prefix}body-color-rgb: #{to-rgb($body-color)};
+--#{$prefix}body-bg: #{$body-bg};
+--#{$prefix}body-bg-rgb: #{to-rgb($body-bg)};
+
+--#{$prefix}emphasis-color: #{$body-emphasis-color};
+--#{$prefix}emphasis-color-rgb: #{to-rgb($body-emphasis-color)};
+
+--#{$prefix}secondary-color: #{$body-secondary-color};
+--#{$prefix}secondary-color-rgb: #{to-rgb($body-secondary-color)};
+--#{$prefix}secondary-bg: #{$body-secondary-bg};
+--#{$prefix}secondary-bg-rgb: #{to-rgb($body-secondary-bg)};
+
+--#{$prefix}tertiary-color: #{$body-tertiary-color};
+--#{$prefix}tertiary-color-rgb: #{to-rgb($body-tertiary-color)};
+--#{$prefix}tertiary-bg: #{$body-tertiary-bg};
+--#{$prefix}tertiary-bg-rgb: #{to-rgb($body-tertiary-bg)};
+body {
+  margin: 0; // 1
+  font-family: var(--#{$prefix}body-font-family);
+  @include font-size(var(--#{$prefix}body-font-size));
+  font-weight: var(--#{$prefix}body-font-weight);
+  line-height: var(--#{$prefix}body-line-height);
+  color: var(--#{$prefix}body-color);
+  text-align: var(--#{$prefix}body-text-align);
+  background-color: var(--#{$prefix}body-bg); // 2
+  -webkit-text-size-adjust: 100%; // 3
+  -webkit-tap-highlight-color: rgba($black, 0); // 4
+}
+$font-family-sans-serif:
+  // Cross-platform generic font family (default user interface font)
+  system-ui,
+  // Safari for macOS and iOS (San Francisco)
+  -apple-system,
+  // Windows
+  "Segoe UI",
+  // Android
+  Roboto,
+  // older macOS and iOS
+  "Helvetica Neue",
+  // Linux
+  "Noto Sans",
+  "Liberation Sans",
+  // Basic web fallback
+  Arial,
+  // Sans serif fallback
+  sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;****
+  <table>
+  <caption>
+    This is an example table, and this is its caption to describe the contents.
+  </caption>
+  <thead>
+    <tr>
+      <th>Table heading</th>
+      <th>Table heading</th>
+      <th>Table heading</th>
+      <th>Table heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+    </tr>
+    <tr>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+    </tr>
+    <tr>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+    </tr>
+  </tbody>
+</table>
+<p>You can use the mark tag to <mark>highlight</mark> text.</p>
+<p><del>This line of text is meant to be treated as deleted text.</del></p>
+<p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+<p><u>This line of text will render as underlined.</u></p>
+<p><small>This line of text is meant to be treated as fine print.</small></p>
+<p><strong>This line rendered as bold text.</strong></p>
+<p><em>This line rendered as italicized text.</em></p>
+<dl class="row">
+  <dt class="col-sm-3">Description lists</dt>
+  <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+
+  <dt class="col-sm-3">Term</dt>
+  <dd class="col-sm-9">
+    <p>Definition for the term.</p>
+    <p>And some more placeholder definition text.</p>
+  </dd>
+
+  <dt class="col-sm-3">Another term</dt>
+  <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
+
+  <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+  <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+
+  <dt class="col-sm-3">Nesting</dt>
+  <dd class="col-sm-9">
+    <dl class="row">
+      <dt class="col-sm-4">Nested definition list</dt>
+      <dd class="col-sm-8">I heard you like definition lists. Let me put a definition list inside your definition list.</dd>
+    </dl>
+  </dd>
+</dl>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<!-- On tables -->
+<table class="table-primary">...</table>
+<table class="table-secondary">...</table>
+<table class="table-success">...</table>
+<table class="table-danger">...</table>
+<table class="table-warning">...</table>
+<table class="table-info">...</table>
+<table class="table-light">...</table>
+<table class="table-dark">...</table>
+
+<!-- On rows -->
+<tr class="table-primary">...</tr>
+<tr class="table-secondary">...</tr>
+<tr class="table-success">...</tr>
+<tr class="table-danger">...</tr>
+<tr class="table-warning">...</tr>
+<tr class="table-info">...</tr>
+<tr class="table-light">...</tr>
+<tr class="table-dark">...</tr>
+
+<!-- On cells (`td` or `th`) -->
+<tr>
+  <td class="table-primary">...</td>
+  <td class="table-secondary">...</td>
+  <td class="table-success">...</td>
+  <td class="table-danger">...</td>
+  <td class="table-warning">...</td>
+  <td class="table-info">...</td>
+  <td class="table-light">...</td>
+  <td class="table-dark">...</td>
+</tr>
+<table class="table">
+  <thead>
+    ...
+  </thead>
+  <tbody>
+    <tr class="table-active">
+      ...
+    </tr>
+    <tr>
+      ...
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2" class="table-active">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-dark">
+  <thead>
+    ...
+  </thead>
+  <tbody>
+    <tr class="table-active">
+      ...
+    </tr>
+    <tr>
+      ...
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2" class="table-active">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+@mixin table-variant($state, $background) {
+  .table-#{$state} {
+    $color: color-contrast(opaque($body-bg, $background));
+    $hover-bg: mix($color, $background, percentage($table-hover-bg-factor));
+    $striped-bg: mix($color, $background, percentage($table-striped-bg-factor));
+    $active-bg: mix($color, $background, percentage($table-active-bg-factor));
+    $table-border-color: mix($color, $background, percentage($table-border-factor));
+
+    --#{$prefix}table-color: #{$color};
+    --#{$prefix}table-bg: #{$background};
+    --#{$prefix}table-border-color: #{$table-border-color};
+    --#{$prefix}table-striped-bg: #{$striped-bg};
+    --#{$prefix}table-striped-color: #{color-contrast($striped-bg)};
+    --#{$prefix}table-active-bg: #{$active-bg};
+    --#{$prefix}table-active-color: #{color-contrast($active-bg)};
+    --#{$prefix}table-hover-bg: #{$hover-bg};
+    --#{$prefix}table-hover-color: #{color-contrast($hover-bg)};
+
+    color: var(--#{$prefix}table-color);
+    border-color: var(--#{$prefix}table-border-color);
+  }
+}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<div class="table-responsive">
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        ...
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        ...
+      </tr>
+      <tr class="align-bottom">
+        ...
+      </tr>
+      <tr>
+        <td>...</td>
+        <td>...</td>
+        <td class="align-top">This cell is aligned to the top.</td>
+        <td>...</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
