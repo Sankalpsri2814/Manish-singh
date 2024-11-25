@@ -388,6 +388,7 @@ print("Variance of Sample5 is % s " %(variance(sample5)))
   <table class="table">
     ...
   </table>
+    
 </div>
 <div class="table-responsive-sm">
   <table class="table">
