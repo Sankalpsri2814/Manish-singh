@@ -2717,4 +2717,324 @@ $accordion-button-active-icon-dark:  url("data:image/svg+xml,<svg xmlns='http://
   values: baseline top middle bottom text-bottom text-top
 ),
 
-// 8. Add additional custom code here
+// // Functions first
+@import "../node_modules/bootstrap/scss/functions";
+
+// Variable overrides second
+$primary: #900;
+$enable-shadows: true;
+$prefix: "mo-";
+
+// Required Bootstrap imports
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// Optional components
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/helpers";
+@import "../node_modules/bootstrap/scss/utilities/api";8. Add additional custom code here
+<div class="grid gap-0 row-gap-3">
+  <div class="p-2 g-col-6">Grid item 1</div>
+  <div class="p-2 g-col-6">Grid item 2</div>
+  <div class="p-2 g-col-6">Grid item 3</div>
+  <div class="p-2 g-col-6">Grid item 4</div>
+</div>
+<div class="grid gap-0 column-gap-3">
+  <div class="p-2 g-col-6">Grid item 1</div>
+  <div class="p-2 g-col-6">Grid item 2</div>
+  <div class="p-2 g-col-6">Grid item 3</div>
+  <div class="p-2 g-col-6">Grid item 4</div>
+</div>
+"margin": (
+  responsive: true,
+  property: margin,
+  class: m,
+  values: map-merge($spacers, (auto: auto))
+),
+"margin-x": (
+  responsive: true,
+  property: margin-right margin-left,
+  class: mx,
+  values: map-merge($spacers, (auto: auto))
+),
+"margin-y": (
+  responsive: true,
+  property: margin-top margin-bottom,
+  class: my,
+  values: map-merge($spacers, (auto: auto))
+),
+"margin-top": (
+  responsive: true,
+  property: margin-top,
+  class: mt,
+  values: map-merge($spacers, (auto: auto))
+),
+"margin-end": (
+  responsive: true,
+  property: margin-right,
+  class: me,
+  values: map-merge($spacers, (auto: auto))
+),
+"margin-bottom": (
+  responsive: true,
+  property: margin-bottom,
+  class: mb,
+  values: map-merge($spacers, (auto: auto))
+),
+"margin-start": (
+  responsive: true,
+  property: margin-left,
+  class: ms,
+  values: map-merge($spacers, (auto: auto))
+),
+// Negative margin utilities
+"negative-margin": (
+  responsive: true,
+  property: margin,
+  class: m,
+  values: $negative-spacers
+),
+"negative-margin-x": (
+  responsive: true,
+  property: margin-right margin-left,
+  class: mx,
+  values: $negative-spacers
+),
+"negative-margin-y": (
+  responsive: true,
+  property: margin-top margin-bottom,
+  class: my,
+  values: $negative-spacers
+),
+"negative-margin-top": (
+  responsive: true,
+  property: margin-top,
+  class: mt,
+  values: $negative-spacers
+),
+"negative-margin-end": (
+  responsive: true,
+  property: margin-right,
+  class: me,
+  values: $negative-spacers
+),
+"negative-margin-bottom": (
+  responsive: true,
+  property: margin-bottom,
+  class: mb,
+  values: $negative-spacers
+),
+"negative-margin-start": (
+  responsive: true,
+  property: margin-left,
+  class: ms,
+  values: $negative-spacers
+),
+// Padding utilities
+"padding": (
+  responsive: true,
+  property: padding,
+  class: p,
+  values: $spacers
+),
+"padding-x": (
+  responsive: true,
+  property: padding-right padding-left,
+  class: px,
+  values: $spacers
+),
+"padding-y": (
+  responsive: true,
+  property: padding-top padding-bottom,
+  class: py,
+  values: $spacers
+),
+"padding-top": (
+  responsive: true,
+  property: padding-top,
+  class: pt,
+  values: $spacers
+),
+"padding-end": (
+  responsive: true,
+  property: padding-right,
+  class: pe,
+  values: $spacers
+),
+"padding-bottom": (
+  responsive: true,
+  property: padding-bottom,
+  class: pb,
+  values: $spacers
+),
+"padding-start": (
+  responsive: true,
+  property: padding-left,
+  class: ps,
+  values: $spacers
+),
+// Gap utility
+"gap": (
+  responsive: true,
+  property: gap,
+  class: gap,
+  values: $spacers
+),
+"row-gap": (
+  responsive: true,
+  property: row-gap,
+  class: row-gap,
+  values: $spacers
+),
+"column-gap": (
+  responsive: true,
+  property: column-gap,
+  class: column-gap,
+  values: $spacers
+),
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+// stylelint-enable value-keyword-case
+$font-family-base:            var(--#{$prefix}font-sans-serif);
+$font-family-code:            var(--#{$prefix}font-monospace);
+
+// $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
+// $font-size-base affects the font size of the body text
+$font-size-root:              null;
+$font-size-base:              1rem; // Assumes the browser default, typically `16px`
+$font-size-sm:                $font-size-base * .875;
+$font-size-lg:                $font-size-base * 1.25;
+
+$font-weight-lighter:         lighter;
+$font-weight-light:           300;
+$font-weight-normal:          400;
+$font-weight-medium:          500;
+$font-weight-semibold:        600;
+$font-weight-bold:            700;
+$font-weight-bolder:          bolder;
+
+$font-weight-base:            $font-weight-normal;
+
+$line-height-base:            1.5;
+$line-height-sm:              1.25;
+$line-height-lg:              2;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+// stylelint-enable value-keyword-case
+$font-family-base:            var(--#{$prefix}font-sans-serif);
+$font-family-code:            var(--#{$prefix}font-monospace);
+
+// $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
+// $font-size-base affects the font size of the body text
+$font-size-root:              null;
+$font-size-base:              1rem; // Assumes the browser default, typically `16px`
+$font-size-sm:                $font-size-base * .875;
+$font-size-lg:                $font-size-base * 1.25;
+
+$font-weight-lighter:         lighter;
+$font-weight-light:           300;
+$font-weight-normal:          400;
+$font-weight-medium:          500;
+$font-weight-semibold:        600;
+$font-weight-bold:            700;
+$font-weight-bolder:          bolder;
+
+$font-weight-base:            $font-weight-normal;
+
+$line-height-base:            1.5;
+$line-height-sm:              1.25;
+$line-height-lg:              2;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+"font-family": (
+  property: font-family,
+  class: font,
+  values: (monospace: var(--#{$prefix}font-monospace))
+),
+"font-size": (
+  rfs: true,
+  property: font-size,
+  class: fs,
+  values: $font-sizes
+),
+"font-style": (
+  property: font-style,
+  class: fst,
+  values: italic normal
+),
+"font-weight": (
+  property: font-weight,
+  class: fw,
+  values: (
+    lighter: $font-weight-lighter,
+    light: $font-weight-light,
+    normal: $font-weight-normal,
+    medium: $font-weight-medium,
+    semibold: $font-weight-semibold,
+    bold: $font-weight-bold,
+    bolder: $font-weight-bolder
+  )
+),
+"line-height": (
+  property: line-height,
+  class: lh,
+  values: (
+    1: 1,
+    sm: $line-height-sm,
+    base: $line-height-base,
+    lg: $line-height-lg,
+  )
+),
+"text-align": (
+  responsive: true,
+  property: text-align,
+  class: text,
+  values: (
+    start: left,
+    end: right,
+    center: center,
+  )
+),
+"text-decoration": (
+  property: text-decoration,
+  values: none underline line-through
+),
+"text-transform": (
+  property: text-transform,
+  class: text,
+  values: lowercase uppercase capitalize
+),
+"white-space": (
+  property: white-space,
+  class: text,
+  values: (
+    wrap: normal,
+    nowrap: nowrap,
+  )
+),
+"word-wrap": (
+  property: word-wrap word-break,
+  class: text,
+  values: (break: break-word),
+  rtl: false
+),
