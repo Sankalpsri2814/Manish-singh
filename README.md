@@ -3173,3 +3173,229 @@ $body-color: #111;
 // etc
 /*rtl:end:options*/
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+  $thumbnail-padding:                 .25rem;
+$thumbnail-bg:                      var(--#{$prefix}body-bg);
+$thumbnail-border-width:            var(--#{$prefix}border-width);
+$thumbnail-border-color:            var(--#{$prefix}border-color);
+$thumbnail-border-radius:           var(--#{$prefix}border-radius);
+$thumbnail-box-shadow:              var(--#{$prefix}box-shadow-sm);
+<picture>
+  <source srcset="..." type="image/svg+xml">
+  <img src="..." class="img-fluid img-thumbnail" alt="...">
+</picture>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<!-- On tables -->
+<table class="table-primary">...</table>
+<table class="table-secondary">...</table>
+<table class="table-success">...</table>
+<table class="table-danger">...</table>
+<table class="table-warning">...</table>
+<table class="table-info">...</table>
+<table class="table-light">...</table>
+<table class="table-dark">...</table>
+
+<!-- On rows -->
+<tr class="table-primary">...</tr>
+<tr class="table-secondary">...</tr>
+<tr class="table-success">...</tr>
+<tr class="table-danger">...</tr>
+<tr class="table-warning">...</tr>
+<tr class="table-info">...</tr>
+<tr class="table-light">...</tr>
+<tr class="table-dark">...</tr>
+
+<!-- On cells (`td` or `th`) -->
+<tr>
+  <td class="table-primary">...</td>
+  <td class="table-secondary">...</td>
+  <td class="table-success">...</td>
+  <td class="table-danger">...</td>
+  <td class="table-warning">...</td>
+  <td class="table-info">...</td>
+  <td class="table-light">...</td>
+  <td class="table-dark">...</td>
+</tr>
+<table class="table">
+  <thead>
+    ...
+  </thead>
+  <tbody>
+    <tr class="table-active">
+      ...
+    </tr>
+    <tr>
+      ...
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2" class="table-active">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+@mixin table-variant($state, $background) {
+  .table-#{$state} {
+    $color: color-contrast(opaque($body-bg, $background));
+    $hover-bg: mix($color, $background, percentage($table-hover-bg-factor));
+    $striped-bg: mix($color, $background, percentage($table-striped-bg-factor));
+    $active-bg: mix($color, $background, percentage($table-active-bg-factor));
+    $table-border-color: mix($color, $background, percentage($table-border-factor));
+
+    --#{$prefix}table-color: #{$color};
+    --#{$prefix}table-bg: #{$background};
+    --#{$prefix}table-border-color: #{$table-border-color};
+    --#{$prefix}table-striped-bg: #{$striped-bg};
+    --#{$prefix}table-striped-color: #{color-contrast($striped-bg)};
+    --#{$prefix}table-active-bg: #{$active-bg};
+    --#{$prefix}table-active-color: #{color-contrast($active-bg)};
+    --#{$prefix}table-hover-bg: #{$hover-bg};
+    --#{$prefix}table-hover-color: #{color-contrast($hover-bg)};
+
+    color: var(--#{$prefix}table-color);
+    border-color: var(--#{$prefix}table-border-color);
+  }
+<table class="table table-dark">
+  <thead>
+    ...
+  </thead>
+  <tbody>
+    <tr class="table-active">
+      ...
+    </tr>
+    <tr>
+      ...
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2" class="table-active">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<div class="table-responsive">
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        ...
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        ...
+      </tr>
+      <tr class="align-bottom">
+        ...
+      </tr>
+      <tr>
+        <td>...</td>
+        <td>...</td>
+        <td class="align-top">This cell is aligned to the top.</td>
+        <td>...</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<table class="table table-striped table-bordered">
+  <thead>
+    ...
+  </thead>
+  <tbody>
+    ...
+    <tr>
+      <td colspan="4">
+        <table class="table mb-0">
+          ...
+        </table>
+      </td>
+    </tr>
+    ...
+  </tbody>
+</table>
+<table class="table caption-top">
+  <caption>List of users</caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
