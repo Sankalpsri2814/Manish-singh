@@ -3575,5 +3575,376 @@ $thumbnail-box-shadow:              var(--#{$prefix}box-shadow-sm);
     </div>
   </div>
 </nav>
+'use strict'
+
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+module.exports = {
+  mode: 'development',
+  entry: './src/js/main.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  devServer: {
+    static: path.resolve(__dirname, 'dist'),
+    port: 8080,
+    hot: true
+  },
+  plugins: [
+    new HtmlWebpackPlugin({ template: './src/index.html' })
+  ]
+}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap w/ Webpack</title>
+  </head>
+  <body>
+    <div class="container py-4 px-3 mx-auto">
+      <h1>Hello, Bootstrap and Webpack!</h1>
+      <button class="btn btn-primary">Primary button</button>
+    </div>
+  </body>
+</html>
+'use strict'
+
+const path = require('path')
+const autoprefixer = require('autoprefixer')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+module.exports = {
+  mode: 'development',
+  entry: './src/js/main.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  devServer: {
+    static: path.resolve(__dirname, 'dist'),
+    port: 8080,
+    hot: true
+  },
+  plugins: [
+    new HtmlWebpackPlugin({ template: './src/index.html' })
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.(scss)$/,
+        use: [
+          {
+            // Adds CSS to the DOM by injecting a `<style>` tag
+            loader: 'style-loader'
+          },
+          {
+            // Interprets `@import` and `url()` like `import/require()` and will resolve them
+            loader: 'css-loader'
+          },
+          {
+            // Loader for webpack to process CSS with PostCSS
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  autoprefixer
+                ]
+              }
+            }
+          },
+          {
+            // Loads a SASS/SCSS file and compiles it to CSS
+            loader: 'sass-loader'
+          }
+        ]
+      }
+    ]
+  }
+}
+--- a/webpack.config.js
++++ b/webpack.config.js
+@@ -3,6 +3,7 @@
+ const path = require('path')
+ const autoprefixer = require('autoprefixer')
+ const HtmlWebpackPlugin = require('html-webpack-plugin')
++const miniCssExtractPlugin = require('mini-css-extract-plugin')
+
+ module.exports = {
+   mode: 'development',
+@@ -17,7 +18,8 @@ module.exports = {
+     hot: true
+   },
+   plugins: [
+-    new HtmlWebpackPlugin({ template: './src/index.html' })
++    new HtmlWebpackPlugin({ template: './src/index.html' }),
++    new miniCssExtractPlugin()
+   ],
+   module: {
+     rules: [
+@@ -25,8 +27,8 @@ module.exports = {
+         test: /\.(scss)$/,
+         use: [
+           {
+-            // Adds CSS to the DOM by injecting a `<style>` tag
+-            loader: 'style-loader'
++            // Extracts CSS for each JS file that includes CSS
++            loader: miniCssExtractPlugin.loader
+           },
+           {
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap w/ Parcel</title>
+    <link rel="stylesheet" href="scss/styles.scss">
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="container py-4 px-3 mx-auto">
+      <h1>Hello, Bootstrap and Parcel!</h1>
+      <button class="btn btn-primary">Primary button</button>
+    </div>
+  </body>
+</html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap w/ Vite</title>
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <div class="container py-4 px-3 mx-auto">
+      <h1>Hello, Bootstrap and Vite!</h1>
+      <button class="btn btn-primary">Primary button</button>
+    </div>
+  </body>
+</html>
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
+
+    <title>مرحبًا بالعالم!</title>
+  </head>
+  <body>
+    <h1>مرحبًا بالعالم!</h1>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
+/* bootstrap.css */
+dt {
+  font-weight: 700 /* rtl:600 */;
+}
+
+/* bootstrap.rtl.css */
+dt {
+  font-weight: 600;
+}
+/* bootstrap.css */
+dt {
+  font-weight: 700 /* rtl:600 */;
+}
+
+/* bootstrap.rtl.css */
+dt {
+  font-weight: 600;
+}
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+
+// Default variable overrides
+$body-bg: #000;
+$body-color: #111;
+
+// Required
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// Optional Bootstrap components here
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+// etc
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+$theme-colors: map-remove($theme-colors, "info", "light", "dark");
+
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// Optional
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+// etc// Required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+$theme-colors: map-remove($theme-colors, "info", "light", "dark");
+
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// Optional
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+// etc
+$border-radius: .25rem;
+$border-width: 1px;
+
+.element {
+  // Output calc(.25rem - 1px) is valid
+  border-radius: calc($border-radius - $border-width);
+}
+
+.element {
+  // Output the same calc(.25rem - 1px) as above
+  border-radius: subtract($border-radius, $border-width);
+}
+<div class="dropdown" data-bs-theme="light">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
+    Default dropdown
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
+    <li><a class="dropdown-item active" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+
+<div class="dropdown" data-bs-theme="dark">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-expanded="false">
+    Dark dropdown
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+    <li><a class="dropdown-item active" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+// List group contextual variants
+//
+// Add modifier classes to change text and background color on individual items.
+// Organizationally, this must come after the `:hover` states.
+
+@each $state in map-keys($theme-colors) {
+  .list-group-item-#{$state} {
+    --#{$prefix}list-group-color: var(--#{$prefix}#{$state}-text-emphasis);
+    --#{$prefix}list-group-bg: var(--#{$prefix}#{$state}-bg-subtle);
+    --#{$prefix}list-group-border-color: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}list-group-action-hover-color: var(--#{$prefix}emphasis-color);
+    --#{$prefix}list-group-action-hover-bg: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}list-group-action-active-color: var(--#{$prefix}emphasis-color);
+    --#{$prefix}list-group-action-active-bg: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}list-group-active-color: var(--#{$prefix}#{$state}-bg-subtle);
+    --#{$prefix}list-group-active-bg: var(--#{$prefix}#{$state}-text-emphasis);
+    --#{$prefix}list-group-active-border-color: var(--#{$prefix}#{$state}-text-emphasis);
+  }
+}
+// We deliberately hardcode the `bs-` prefix because we check
+// this custom property in JS to determine Popper's positioning
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .dropdown-menu#{$infix}-start {
+      --bs-position: start;
+
+      &[data-bs-popper] {
+        right: auto;
+        left: 0;
+      }
+    }
+
+    .dropdown-menu#{$infix}-end {
+      --bs-position: end;
+
+      &[data-bs-popper] {
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+}
 
 
