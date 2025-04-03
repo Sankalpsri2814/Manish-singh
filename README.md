@@ -3934,7 +3934,134 @@ $border-width: 1px;
         right: auto;
         left: 0;
       }
-    }
+    }<div class="container text-center">
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <div class="col">
+      <div class="p-3">Row column</div>
+    </div>
+    <div class="col">
+      <div class="p-3">Row column</div>
+    </div>
+    <div class="col">
+      <div class="p-3">Row column</div>
+    </div>
+    <div class="col">
+      <div class="p-3">Row column</div>
+    </div>
+    <div class="col">
+      <div class="p-3">Row column</div>
+    </div>
+    <div class="col">
+      <div class="p-3">Row column</div>
+    </div>
+    <div class="col">
+      <div class="p-3">Row column</div>
+    </div>
+    <div class="col">
+      <div class="p-3">Row column</div>
+    </div>
+    <div class="col">
+      <div class="p-3">Row column</div>
+    </div>
+    <div class="col">
+      <div class="p-3">Row column</div>
+    </div>
+  </div>
+</div>
+@if $font-size-root != null {
+  --#{$prefix}root-font-size: #{$font-size-root};
+}
+--#{$prefix}body-font-family: #{inspect($font-family-base)};
+@include rfs($font-size-base, --#{$prefix}body-font-size);
+--#{$prefix}body-font-weight: #{$font-weight-base};
+--#{$prefix}body-line-height: #{$line-height-base};
+@if $body-text-align != null {
+  --#{$prefix}body-text-align: #{$body-text-align};
+}
+
+--#{$prefix}body-color: #{$body-color};
+--#{$prefix}body-color-rgb: #{to-rgb($body-color)};
+--#{$prefix}body-bg: #{$body-bg};
+--#{$prefix}body-bg-rgb: #{to-rgb($body-bg)};
+
+--#{$prefix}emphasis-color: #{$body-emphasis-color};
+--#{$prefix}emphasis-color-rgb: #{to-rgb($body-emphasis-color)};
+
+--#{$prefix}secondary-color: #{$body-secondary-color};
+--#{$prefix}secondary-color-rgb: #{to-rgb($body-secondary-color)};
+--#{$prefix}secondary-bg: #{$body-secondary-bg};
+--#{$prefix}secondary-bg-rgb: #{to-rgb($body-secondary-bg)};
+
+--#{$prefix}tertiary-color: #{$body-tertiary-color};
+--#{$prefix}tertiary-color-rgb: #{to-rgb($body-tertiary-color)};
+--#{$prefix}tertiary-bg: #{$body-tertiary-bg};
+--#{$prefix}tertiary-bg-rgb: #{to-rgb($body-tertiary-bg)};
+body {
+  margin: 0; // 1
+  font-family: var(--#{$prefix}body-font-family);
+  @include font-size(var(--#{$prefix}body-font-size));
+  font-weight: var(--#{$prefix}body-font-weight);
+  line-height: var(--#{$prefix}body-line-height);
+  color: var(--#{$prefix}body-color);
+  text-align: var(--#{$prefix}body-text-align);
+  background-color: var(--#{$prefix}body-bg); // 2
+  -webkit-text-size-adjust: 100%; // 3
+  -webkit-tap-highlight-color: rgba($black, 0); // 4
+}
+$font-family-sans-serif:
+  // Cross-platform generic font family (default user interface font)
+  system-ui,
+  // Safari for macOS and iOS (San Francisco)
+  -apple-system,
+  // Windows
+  "Segoe UI",
+  // Android
+  Roboto,
+  // older macOS and iOS
+  "Helvetica Neue",
+  // Linux
+  "Noto Sans",
+  "Liberation Sans",
+  // Basic web fallback
+  Arial,
+  // Sans serif fallback
+  sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;<table>
+  <caption>
+    This is an example table, and this is its caption to describe the contents.
+  </caption>
+  <thead>
+    <tr>
+      <th>Table heading</th>
+      <th>Table heading</th>
+      <th>Table heading</th>
+      <th>Table heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+    </tr>
+    <tr>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+    </tr>
+    <tr>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+    </tr>
+  </tbody>
+</table>
+
+  
 
     .dropdown-menu#{$infix}-end {
       --bs-position: end;
