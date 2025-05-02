@@ -4649,9 +4649,470 @@ $focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color
     <a class="nav-link disabled" aria-disabled="true">Disabled</a>
   </li>
 </ul>
+// Get the size of the input string
+int n = s.size(); 
+
+// Iterate over the length of current string
+for (int i = 0; i < n; i++) {
+    bool repeated = false;
+
+    // Check if the current characteris the same
+    // as the next one
+    while (i + 1 < n && s[i] == s[i + 1]) {
+        repeated = true;  // Mark as repeated
+      
+        // Skip the next character
+        // since it's a duplicate
+        i++;  
+    }
+
+    // If the character was not repeated,
+    // add it to the result string
+    if (!repeated) sb += s[i];
+}
+
+// If no changes made, return the result string
+if (n == sb.length())
+    return sb;
+// Otherwise, recursively call the function 
+// to check for more duplicates
+return rremove(sb);
+
+<div class="dropdown" data-bs-theme="light">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
+    Default dropdown
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
+    <li><a class="dropdown-item active" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+
+<div class="dropdown" data-bs-theme="dark">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-expanded="false">
+    Dark dropdown
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+    <li><a class="dropdown-item active" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+--#{$prefix}body-color: #{$body-color-dark};
+--#{$prefix}body-color-rgb: #{to-rgb($body-color-dark)};
+--#{$prefix}body-bg: #{$body-bg-dark};
+--#{$prefix}body-bg-rgb: #{to-rgb($body-bg-dark)};
+
+--#{$prefix}emphasis-color: #{$body-emphasis-color-dark};
+--#{$prefix}emphasis-color-rgb: #{to-rgb($body-emphasis-color-dark)};
+
+--#{$prefix}secondary-color: #{$body-secondary-color-dark};
+--#{$prefix}secondary-color-rgb: #{to-rgb($body-secondary-color-dark)};
+--#{$prefix}secondary-bg: #{$body-secondary-bg-dark};
+--#{$prefix}secondary-bg-rgb: #{to-rgb($body-secondary-bg-dark)};
+
+--#{$prefix}tertiary-color: #{$body-tertiary-color-dark};
+--#{$prefix}tertiary-color-rgb: #{to-rgb($body-tertiary-color-dark)};
+--#{$prefix}tertiary-bg: #{$body-tertiary-bg-dark};
+--#{$prefix}tertiary-bg-rgb: #{to-rgb($body-tertiary-bg-dark)};
+
+@each $color, $value in $theme-colors-text-dark {
+  --#{$prefix}#{$color}-text-emphasis: #{$value};
+}
+
+@each $color, $value in $theme-colors-bg-subtle-dark {
+  --#{$prefix}#{$color}-bg-subtle: #{$value};
+}
+
+@each $color, $value in $theme-colors-border-subtle-dark {
+  --#{$prefix}#{$color}-border-subtle: #{$value};
+}
+
+--#{$prefix}heading-color: #{$headings-color-dark};
+
+--#{$prefix}link-color: #{$link-color-dark};
+--#{$prefix}link-hover-color: #{$link-hover-color-dark};
+--#{$prefix}link-color-rgb: #{to-rgb($link-color-dark)};
+--#{$prefix}link-hover-color-rgb: #{to-rgb($link-hover-color-dark)};
+
+--#{$prefix}code-color: #{$code-color-dark};
+--#{$prefix}highlight-color: #{$mark-color-dark};
+--#{$prefix}highlight-bg: #{$mark-bg-dark};
+
+--#{$prefix}border-color: #{$border-color-dark};
+--#{$prefix}border-color-translucent: #{$border-color-translucent-dark};
+
+--#{$prefix}form-valid-color: #{$form-valid-color-dark};
+--#{$prefix}form-valid-border-color: #{$form-valid-border-color-dark};
+--#{$prefix}form-invalid-color: #{$form-invalid-color-dark};
+--#{$prefix}form-invalid-border-color: #{$form-invalid-border-color-dark};
+$primary-text-emphasis-dark:        tint-color($primary, 40%);
+$secondary-text-emphasis-dark:      tint-color($secondary, 40%);
+$success-text-emphasis-dark:        tint-color($success, 40%);
+$info-text-emphasis-dark:           tint-color($info, 40%);
+$warning-text-emphasis-dark:        tint-color($warning, 40%);
+$danger-text-emphasis-dark:         tint-color($danger, 40%);
+$light-text-emphasis-dark:          $gray-100;
+$dark-text-emphasis-dark:           $gray-300;
+
+$primary-bg-subtle-dark:            shade-color($primary, 80%);
+$secondary-bg-subtle-dark:          shade-color($secondary, 80%);
+$success-bg-subtle-dark:            shade-color($success, 80%);
+$info-bg-subtle-dark:               shade-color($info, 80%);
+$warning-bg-subtle-dark:            shade-color($warning, 80%);
+$danger-bg-subtle-dark:             shade-color($danger, 80%);
+$light-bg-subtle-dark:              $gray-800;
+$dark-bg-subtle-dark:               mix($gray-800, $black);
+
+$primary-border-subtle-dark:        shade-color($primary, 40%);
+$secondary-border-subtle-dark:      shade-color($secondary, 40%);
+$success-border-subtle-dark:        shade-color($success, 40%);
+$info-border-subtle-dark:           shade-color($info, 40%);
+$warning-border-subtle-dark:        shade-color($warning, 40%);
+$danger-border-subtle-dark:         shade-color($danger, 40%);
+$light-border-subtle-dark:          $gray-700;
+$dark-border-subtle-dark:           $gray-800;
+
+$body-color-dark:                   $gray-300;
+$body-bg-dark:                      $gray-900;
+$body-secondary-color-dark:         rgba($body-color-dark, .75);
+$body-secondary-bg-dark:            $gray-800;
+$body-tertiary-color-dark:          rgba($body-color-dark, .5);
+$body-tertiary-bg-dark:             mix($gray-800, $gray-900, 50%);
+$body-emphasis-color-dark:          $white;
+$border-color-dark:                 $gray-700;
+$border-color-translucent-dark:     rgba($white, .15);
+$headings-color-dark:               inherit;
+$link-color-dark:                   tint-color($primary, 40%);
+$link-hover-color-dark:             shift-color($link-color-dark, -$link-shade-percentage);
+$code-color-dark:                   tint-color($code-color, 40%);
+$mark-color-dark:                   $body-color-dark;
+$mark-bg-dark:                      $yellow-800;
 
 
+//
+// Forms
+//
+
+$form-select-indicator-color-dark:  $body-color-dark;
+$form-select-indicator-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color-dark}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+
+$form-switch-color-dark:            rgba($white, .25);
+$form-switch-bg-image-dark:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color-dark}'/></svg>");
+
+$form-valid-color-dark:             $green-300;
+$form-valid-border-color-dark:      $green-300;
+$form-invalid-color-dark:           $red-300;
+$form-invalid-border-color-dark:    $red-300;
 
 
+//
+// Accordion
+//
 
+$accordion-icon-color-dark:         $primary-text-emphasis-dark;
+$accordion-icon-active-color-dark:  $primary-text-emphasis-dark;
+
+$accordion-button-icon-dark:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/></svg>");
+$accordion-button-active-icon-dark:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/></svg>");
+$primary-text-emphasis-dark:        tint-color($primary, 40%);
+$secondary-text-emphasis-dark:      tint-color($secondary, 40%);
+$success-text-emphasis-dark:        tint-color($success, 40%);
+$info-text-emphasis-dark:           tint-color($info, 40%);
+$warning-text-emphasis-dark:        tint-color($warning, 40%);
+$danger-text-emphasis-dark:         tint-color($danger, 40%);
+$light-text-emphasis-dark:          $gray-100;
+$dark-text-emphasis-dark:           $gray-300;
+
+$primary-bg-subtle-dark:            shade-color($primary, 80%);
+$secondary-bg-subtle-dark:          shade-color($secondary, 80%);
+$success-bg-subtle-dark:            shade-color($success, 80%);
+$info-bg-subtle-dark:               shade-color($info, 80%);
+$warning-bg-subtle-dark:            shade-color($warning, 80%);
+$danger-bg-subtle-dark:             shade-color($danger, 80%);
+$light-bg-subtle-dark:              $gray-800;
+$dark-bg-subtle-dark:               mix($gray-800, $black);
+
+$primary-border-subtle-dark:        shade-color($primary, 40%);
+$secondary-border-subtle-dark:      shade-color($secondary, 40%);
+$success-border-subtle-dark:        shade-color($success, 40%);
+$info-border-subtle-dark:           shade-color($info, 40%);
+$warning-border-subtle-dark:        shade-color($warning, 40%);
+$danger-border-subtle-dark:         shade-color($danger, 40%);
+$light-border-subtle-dark:          $gray-700;
+$dark-border-subtle-dark:           $gray-800;
+
+$body-color-dark:                   $gray-300;
+$body-bg-dark:                      $gray-900;
+$body-secondary-color-dark:         rgba($body-color-dark, .75);
+$body-secondary-bg-dark:            $gray-800;
+$body-tertiary-color-dark:          rgba($body-color-dark, .5);
+$body-tertiary-bg-dark:             mix($gray-800, $gray-900, 50%);
+$body-emphasis-color-dark:          $white;
+$border-color-dark:                 $gray-700;
+$border-color-translucent-dark:     rgba($white, .15);
+$headings-color-dark:               inherit;
+$link-color-dark:                   tint-color($primary, 40%);
+$link-hover-color-dark:             shift-color($link-color-dark, -$link-shade-percentage);
+$code-color-dark:                   tint-color($code-color, 40%);
+$mark-color-dark:                   $body-color-dark;
+$mark-bg-dark:                      $yellow-800;
+
+
+//
+// Forms
+//
+
+$form-select-indicator-color-dark:  $body-color-dark;
+$form-select-indicator-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color-dark}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+
+$form-switch-color-dark:            rgba($white, .25);
+$form-switch-bg-image-dark:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color-dark}'/></svg>");
+
+$form-valid-color-dark:             $green-300;
+$form-valid-border-color-dark:      $green-300;
+$form-invalid-color-dark:           $red-300;
+$form-invalid-border-color-dark:    $red-300;
+
+
+//
+// Accordion
+//
+
+$accordion-icon-color-dark:         $primary-text-emphasis-dark;
+$accordion-icon-active-color-dark:  $primary-text-emphasis-dark;
+
+$accordion-button-icon-dark:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/></svg>");
+$accordion-button-active-icon-dark:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/></svg>");
+@mixin color-mode($mode: light, $root: false) {
+  @if $color-mode-type == "media-query" {
+    @if $root == true {
+      @media (prefers-color-scheme: $mode) {
+        :root {
+          @content;
+        }
+      }
+    } @else {
+      @media (prefers-color-scheme: $mode) {
+        @content;
+      }
+    }
+  } @else {
+    [data-bs-theme="#{$mode}"] {
+      @content;
+    }
+  }
+}
+// List group contextual variants
+//
+// Add modifier classes to change text and background color on individual items.
+// Organizationally, this must come after the `:hover` states.
+
+@each $state in map-keys($theme-colors) {
+  .list-group-item-#{$state} {
+    --#{$prefix}list-group-color: var(--#{$prefix}#{$state}-text-emphasis);
+    --#{$prefix}list-group-bg: var(--#{$prefix}#{$state}-bg-subtle);
+    --#{$prefix}list-group-border-color: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}list-group-action-hover-color: var(--#{$prefix}emphasis-color);
+    --#{$prefix}list-group-action-hover-bg: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}list-group-action-active-color: var(--#{$prefix}emphasis-color);
+    --#{$prefix}list-group-action-active-bg: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}list-group-active-color: var(--#{$prefix}#{$state}-bg-subtle);
+    --#{$prefix}list-group-active-bg: var(--#{$prefix}#{$state}-text-emphasis);
+    --#{$prefix}list-group-active-border-color: var(--#{$prefix}#{$state}-text-emphasis);
+  }
+}
+:root,
+[data-bs-theme=light] {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-black: #000;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-primary-rgb: 13, 110, 253;
+  --bs-secondary-rgb: 108, 117, 125;
+  --bs-success-rgb: 25, 135, 84;
+  --bs-info-rgb: 13, 202, 240;
+  --bs-warning-rgb: 255, 193, 7;
+  --bs-danger-rgb: 220, 53, 69;
+  --bs-light-rgb: 248, 249, 250;
+  --bs-dark-rgb: 33, 37, 41;
+  --bs-primary-text-emphasis: #052c65;
+  --bs-secondary-text-emphasis: #2b2f32;
+  --bs-success-text-emphasis: #0a3622;
+  --bs-info-text-emphasis: #055160;
+  --bs-warning-text-emphasis: #664d03;
+  --bs-danger-text-emphasis: #58151c;
+  --bs-light-text-emphasis: #495057;
+  --bs-dark-text-emphasis: #495057;
+  --bs-primary-bg-subtle: #cfe2ff;
+  --bs-secondary-bg-subtle: #e2e3e5;
+  --bs-success-bg-subtle: #d1e7dd;
+  --bs-info-bg-subtle: #cff4fc;
+  --bs-warning-bg-subtle: #fff3cd;
+  --bs-danger-bg-subtle: #f8d7da;
+  --bs-light-bg-subtle: #fcfcfd;
+  --bs-dark-bg-subtle: #ced4da;
+  --bs-primary-border-subtle: #9ec5fe;
+  --bs-secondary-border-subtle: #c4c8cb;
+  --bs-success-border-subtle: #a3cfbb;
+  --bs-info-border-subtle: #9eeaf9;
+  --bs-warning-border-subtle: #ffe69c;
+  --bs-danger-border-subtle: #f1aeb5;
+  --bs-light-border-subtle: #e9ecef;
+  --bs-dark-border-subtle: #adb5bd;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: #212529;
+  --bs-body-color-rgb: 33, 37, 41;
+  --bs-body-bg: #fff;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-emphasis-color: #000;
+  --bs-emphasis-color-rgb: 0, 0, 0;
+  --bs-secondary-color: rgba(33, 37, 41, 0.75);
+  --bs-secondary-color-rgb: 33, 37, 41;
+  --bs-secondary-bg: #e9ecef;
+  --bs-secondary-bg-rgb: 233, 236, 239;
+  --bs-tertiary-color: rgba(33, 37, 41, 0.5);
+  --bs-tertiary-color-rgb: 33, 37, 41;
+  --bs-tertiary-bg: #f8f9fa;
+  --bs-tertiary-bg-rgb: 248, 249, 250;
+  --bs-heading-color: inherit;
+  --bs-link-color: #0d6efd;
+  --bs-link-color-rgb: 13, 110, 253;
+  --bs-link-decoration: underline;
+  --bs-link-hover-color: #0a58ca;
+  --bs-link-hover-color-rgb: 10, 88, 202;
+  --bs-code-color: #d63384;
+  --bs-highlight-color: #212529;
+  --bs-highlight-bg: #fff3cd;
+  --bs-border-width: 1px;
+  --bs-border-style: solid;
+  --bs-border-color: #dee2e6;
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+  --bs-border-radius: 0.375rem;
+  --bs-border-radius-sm: 0.25rem;
+  --bs-border-radius-lg: 0.5rem;
+  --bs-border-radius-xl: 1rem;
+  --bs-border-radius-xxl: 2rem;
+  --bs-border-radius-2xl: var(--bs-border-radius-xxl);
+  --bs-border-radius-pill: 50rem;
+  --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  --bs-focus-ring-width: 0.25rem;
+  --bs-focus-ring-opacity: 0.25;
+  --bs-focus-ring-color: rgba(13, 110, 253, 0.25);
+  --bs-form-valid-color: #198754;
+  --bs-form-valid-border-color: #198754;
+  --bs-form-invalid-color: #dc3545;
+  --bs-form-invalid-border-color: #dc3545;
+}
+--#{$prefix}focus-ring-width: #{$focus-ring-width};
+--#{$prefix}focus-ring-opacity: #{$focus-ring-opacity};
+--#{$prefix}focus-ring-color: #{$focus-ring-color};
+<div class="container-sm">100% wide until small breakpoint</div>
+<div class="container-md">100% wide until medium breakpoint</div>
+<div class="container-lg">100% wide until large breakpoint</div>
+<div class="container-xl">100% wide until extra large breakpoint</div>
+<div class="container-xxl">100% wide until extra extra large breakpoint</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      1 of 2
+    </div>
+    <div class="col">
+      2 of 2
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col">
+      2 of 3
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col-6">
+      2 of 3 (wider)
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col-5">
+      2 of 3 (wider)
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+  </div>
+</div>
 
